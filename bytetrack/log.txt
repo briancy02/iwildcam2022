@@ -1,17 +1,28 @@
-2022-04-17 22:39:21.174 | INFO     | __main__:main:316 - Args: Namespace(aspect_ratio_thresh=1.6, camid=0, ckpt='pretrained/bytetrack_x_mot17.pth.tar', conf=None, demo='video', device=device(type='cuda'), exp_file='exps/example/mot/yolox_x_mix_det.py', experiment_name='yolox_x_mix_det', fp16=True, fps=30, fuse=True, match_thresh=0.8, min_box_area=10, mot20=False, name=None, nms=None, path='./videos/palace.mp4', save_result=True, track_buffer=30, track_thresh=0.5, trt=False, tsize=None)
+2022-04-17 22:48:38.280 | INFO     | __main__:main:316 - Args: Namespace(aspect_ratio_thresh=1.6, camid=0, ckpt='pretrained/bytetrack_x_mot17.pth.tar', conf=None, demo='video', device=device(type='cuda'), exp_file='exps/example/mot/yolox_x_mix_det.py', experiment_name='yolox_x_mix_det', fp16=True, fps=30, fuse=True, match_thresh=0.8, min_box_area=10, mot20=False, name=None, nms=None, path='./videos/palace.mp4', save_result=True, track_buffer=30, track_thresh=0.5, trt=False, tsize=None)
 /usr/local/lib/python3.7/dist-packages/torch/functional.py:445: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  ../aten/src/ATen/native/TensorShape.cpp:2157.)
   return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
-2022-04-17 22:39:33.948 | INFO     | __main__:main:326 - Model Summary: Params: 99.00M, Gflops: 791.73
-2022-04-17 22:39:33.951 | INFO     | __main__:main:334 - loading checkpoint
-Traceback (most recent call last):
-  File "tools/demo_track.py", line 372, in <module>
-    main(exp, args)
-  File "tools/demo_track.py", line 335, in main
-    ckpt = torch.load(ckpt_file, map_location="cpu")
-  File "/usr/local/lib/python3.7/dist-packages/torch/serialization.py", line 594, in load
-    with _open_file_like(f, 'rb') as opened_file:
-  File "/usr/local/lib/python3.7/dist-packages/torch/serialization.py", line 230, in _open_file_like
-    return _open_file(name_or_buffer, mode)
-  File "/usr/local/lib/python3.7/dist-packages/torch/serialization.py", line 211, in __init__
-    super(_open_file, self).__init__(open(name, mode))
-FileNotFoundError: [Errno 2] No such file or directory: 'pretrained/bytetrack_x_mot17.pth.tar'
+2022-04-17 22:48:43.531 | INFO     | __main__:main:326 - Model Summary: Params: 99.00M, Gflops: 791.73
+2022-04-17 22:48:43.533 | INFO     | __main__:main:334 - loading checkpoint
+2022-04-17 22:48:45.147 | INFO     | __main__:main:338 - loaded checkpoint done.
+2022-04-17 22:48:45.147 | INFO     | __main__:main:341 - 	Fusing model...
+/usr/local/lib/python3.7/dist-packages/torch/_tensor.py:1013: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more informations. (Triggered internally at  aten/src/ATen/core/TensorBody.h:417.)
+  return self._grad
+2022-04-17 22:48:46.152 | INFO     | __main__:imageflow_demo:248 - video save_path is ./YOLOX_outputs/yolox_x_mix_det/track_vis/2022_04_17_22_48_46/palace.mp4
+2022-04-17 22:48:46.168 | INFO     | __main__:imageflow_demo:258 - Processing frame 0 (100000.00 fps)
+2022-04-17 22:48:49.933 | INFO     | __main__:imageflow_demo:258 - Processing frame 20 (11.09 fps)
+2022-04-17 22:48:53.618 | INFO     | __main__:imageflow_demo:258 - Processing frame 40 (11.54 fps)
+2022-04-17 22:48:57.155 | INFO     | __main__:imageflow_demo:258 - Processing frame 60 (11.70 fps)
+2022-04-17 22:49:00.704 | INFO     | __main__:imageflow_demo:258 - Processing frame 80 (11.77 fps)
+2022-04-17 22:49:04.220 | INFO     | __main__:imageflow_demo:258 - Processing frame 100 (11.82 fps)
+2022-04-17 22:49:07.688 | INFO     | __main__:imageflow_demo:258 - Processing frame 120 (11.86 fps)
+2022-04-17 22:49:11.142 | INFO     | __main__:imageflow_demo:258 - Processing frame 140 (11.88 fps)
+2022-04-17 22:49:14.603 | INFO     | __main__:imageflow_demo:258 - Processing frame 160 (11.90 fps)
+2022-04-17 22:49:18.093 | INFO     | __main__:imageflow_demo:258 - Processing frame 180 (11.91 fps)
+2022-04-17 22:49:21.568 | INFO     | __main__:imageflow_demo:258 - Processing frame 200 (11.91 fps)
+2022-04-17 22:49:25.049 | INFO     | __main__:imageflow_demo:258 - Processing frame 220 (11.90 fps)
+2022-04-17 22:49:28.511 | INFO     | __main__:imageflow_demo:258 - Processing frame 240 (11.90 fps)
+2022-04-17 22:49:32.029 | INFO     | __main__:imageflow_demo:258 - Processing frame 260 (11.89 fps)
+2022-04-17 22:49:35.530 | INFO     | __main__:imageflow_demo:258 - Processing frame 280 (11.89 fps)
+2022-04-17 22:49:39.090 | INFO     | __main__:imageflow_demo:258 - Processing frame 300 (11.88 fps)
+2022-04-17 22:49:42.609 | INFO     | __main__:imageflow_demo:258 - Processing frame 320 (11.86 fps)
+2022-04-17 22:49:44.010 | INFO     | __main__:imageflow_demo:298 - save results to ./YOLOX_outputs/yolox_x_mix_det/track_vis/2022_04_17_22_48_46.txt
