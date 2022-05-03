@@ -1,3 +1,5 @@
+/CenterTrack/src/lib/model/*.pth
 /data
 /pretrained
 /bytetrack/pretrained
+/bytetrack/datasets/mot
