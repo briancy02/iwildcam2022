@@ -26,7 +26,7 @@ class Exp(BaseExp):
         self.data_num_workers = 4
         self.input_size = (640, 640)
         self.random_size = (14, 26)
-        self.train_ann = "instances_train2017.json"
+        self.train_ann = "iwildcam2022_train_annotations.json"
         self.val_ann = "instances_val2017.json"
 
         # --------------- transform config ----------------- #
@@ -88,16 +88,7 @@ class Exp(BaseExp):
             YoloBatchSampler
         )
 
-        dataset = COCODataset(
-            data_dir=None,
-            json_file=self.train_ann,
-            img_size=self.input_size,
-            preproc=TrainTransform(
-                rgb_means=(0.485, 0.456, 0.406),
-                std=(0.229, 0.224, 0.225),
-                max_labels=50,
-            ),
-        )
+        dataset = CamDataset(df_train, TRAIN_DIR, seq_count)
 
         dataset = MosaicDetection(
             dataset,
