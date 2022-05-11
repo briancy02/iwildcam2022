@@ -67,10 +67,6 @@ class Tracker:
         # Run matching cascade.
         matches, unmatched_tracks, unmatched_detections = \
             self._match(detections)
-        print(matches)
-        print(unmatched_tracks)
-        print(unmatched_detections)
-
         # Update track set.
         for track_idx, detection_idx in matches:
             self.tracks[track_idx].update(
